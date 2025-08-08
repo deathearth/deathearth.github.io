@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-gl/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-stat/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://echarts.apache.org/zh/js/vendors/echarts-graph-modularity/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, 'dark', {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    var ROOT_PATH = 'https://echarts.apache.org/examples';
+    var option;
+
+    myChart.showLoading();
+
+  myChart.hideLoading();
+  myChart.setOption(
+    (option = {
+      title: {
+        text: '全站应用流量模型20250804（早晨十点半左右1小时内的数据）'
+      },
+      textStyle: {
+        fontSize: 12
+      },
+      color:{
+        0: '#5470c6',
+        1: '#91cc75',
+        2: '#fac858',
+        3: '#ee6666',
+        4: '#73c0de',
+        5: '#3ba272',
+        6: '#fc8452',
+        7: '#9a60b4',
+        8: '#ea7ccc',
+        9: '#8E6B23',
+        10:'#00FF7F',
+        11:'#7FFF00',
+        12:'#9370DB'
+      },
+      tooltip: {
+        trigger: 'item',
+        triggerOn: 'mousemove'
+      },
+      series: [
+        {left:'0',right:'10%',top:'0',bottom:'0',
+          type: 'sankey',
+          nodes: [
+            { name: 'missionproservice4' },
+            { name: 'sensitiveword-client' },
+            { name: 'canalservice' },
+            { name: 'creditcenter' },
+            { name: 'inschoollearningservice' },
+            { name: 'etikuprod' },
+            { name: 'aliyun-bi-integration' },
+            { name: 'bigdata-download' },
+            { name: 'homeworkprod' },
+            { name: 'schooluserservice' },
+            { name: 'ewtprod' },
+            { name: 'activity-service' },
+            { name: 'careerlibraryservice' },
+            { name: 'schoolopcenter' },
+            { name: 'video-player-prod' },
+            { name: 'strategymarket' },
+            { name: 'bigdata-integration' },
+            { name: 'evaluateservice' },
+            { name: 'fmservice' },
+            { name: 'resourceservice' },
+            { name: 'volunteermanage' },
+            { name: 'recom-api-home' },
+            { name: 'xinliservice' },
+            { name: 'file-gateway' },
+            { name: 'mstsearchservice' },
+            { name: 'task-service' },
+            { name: 'dataclean' },
+            { name: 'examinationprod' },
+            { name: 'teacherdatacenterservice' },
+            { name: 'commondata' },
+            { name: 'tip-project' },
+            { name: 'authcenter' },
+            { name: 'ssoprod' },
+            { name: 'video-manage' },
+            { name: 'studyplanservice' },
+            { name: 'volunteerservice' },
+            { name: 'warrantservice' },
+            { name: 'message-platform' },
+            { name: 'resourceplatform' },
+            { name: 'studygroupprod' },
+            { name: 'paycenter' },
+            { name: 'thematicservice' },
+            { name: 'asset-service' },
+            { name: 'role-access' },
+            { name: 'c-unified-manage' },
+            { name: 'spm' },
+            { name: 'bbs-api' },
+            { name: 'volunteerguideprod' },
+            { name: 'downloadservice' },
+            { name: 'captcha' },
+            { name: 'bill-center' },
+            { name: 'answerprod' },
+            { name: 'crmbasic' },
+            { name: 'gateway-manage' },
+            { name: 'netschoolservice' },
+            { name: 'liveprod' },
+            { name: 'papersearchservice' },
+            { name: 'spmjob' },
+            { name: 'eteacherproduct' },
+            { name: 'safecenter' },
+            { name: 'missionproservice2' },
+            { name: 'answeraiservice' },
+            { name: 'teachergeneralabilityservice' },
+            { name: 'Arms' },
+            { name: 'admin-gateway' },
+            { name: 'wrongquestion' },
+            { name: 'psychology' },
+            { name: 'videocheckprod' },
+            { name: 'video-server' },
+            { name: 'goldshop' },
+            { name: 'activitycenter' },
+            { name: 'weekendreportservice' },
+            { name: 'answerservice' },
+            { name: 'tip-third-party-integration' },
+            { name: 'rewardcenter' },
+            { name: 'paperservice' },
+            { name: 'ordercenter' },
+            { name: 'tip-integration' },
+            { name: 'apppublishprod' },
+            { name: 'usercenter' },
+            { name: 'studyprod' },
+            { name: 'careerprod' },
+            { name: 'multimedia-management' },
+            { name: 'missionproservice3' },
+            { name: 'wxproxy' },
+            { name: 'contentproduct' },
+            { name: 'mobileapm' },
+            { name: 'data-api-home' },
+            { name: 'courseservice' },
+            { name: 'bigdatalabel' },
+            { name: 'entranceexamprod' },
+            { name: 'bihome' },
+            { name: 'questionproduceprod' },
+            { name: 'work-order' },
+            { name: 'teacherdataproservice' },
+            { name: 'evalteacherprod' },
+            { name: 'tip-pipeline-service' },
+            { name: 'qbank' },
+            { name: 'java-demo-project-a' },
+            { name: 'holidayprod' },
+            { name: 'common-center' },
+            { name: 'teacheradminprod' },
+            { name: 'studynoteprod' },
+            { name: 'net-school' },
+            { name: 'commentservice' },
+            { name: 'homeworkservice' },
+            { name: 'task-center' },
+            { name: 'contentauthcenter' },
+            { name: 'push-monitor' },
+            { name: 'userdataservice' },
+            { name: 'staging-bihome' },
+            { name: 'smscenter' },
+            { name: 'materialprod' },
+            { name: 'report-custom-home' },
+            { name: 'interactive-video' },
+            { name: 'personaservice' },
+            { name: 'demandprod' },
+            { name: 'undergraduateprod' },
+            { name: 'filecenter' },
+            { name: 'xinliprod' },
+            { name: 'parentprod' },
+            { name: 'a-search' },
+            { name: 'message-center' },
+            { name: 'datasampleservice' },
+            { name: 'missionproservice' },
+            { name: 'traffic-management' },
+            { name: 'wordconvertservice' },
+            { name: 'oms' },
+            { name: 'devops-schedule' },
+            { name: 'evaluation' },
+            { name: 'weekendprod' },
+            { name: 'tip-approval-center' },
+            { name: 'cron-job' },
+            { name: 'community-api' },
+            { name: 'doccloudmanageservice' },
+            { name: 'goodservice' },
+            { name: 'personaldataservice' },
+            { name: 'devops-platform' }
+          ],
+          links: [
+            { source: 'netschoolservice', value: 60, target: 'commondata' },
+            { source: 'Arms', value: 737821, target: 'file-gateway' },
+            { source: 'push-monitor', value: 247, target: 'cron-job' },
+            { source: 'work-order', value: 73, target: 'ssoprod' },
+            { source: 'holidayprod', value: 3398510, target: 'usercenter' },
+            {
+              source: 'contentproduct',
+              value: 3475,
+              target: 'contentauthcenter'
+            },
+            { source: 'tip-project', value: 242, target: 'cron-job' },
+            { source: 'activitycenter', value: 46945, target: 'asset-service' },
+            {
+              source: 'tip-third-party-integration',
+              value: 361,
+              target: 'cron-job'
+            },
+            { source: 'schoolopcenter', value: 177, target: 'spm' },
+            { source: 'Arms', value: 4320, target: 'bigdatalabel' },
+            { source: 'downloadservice', value: 861, target: 'holidayprod' },
+            { source: 'tip-approval-center', value: 8, target: 'ssoprod' },
+            { source: 'Arms', value: 537636, target: 'message-platform' },
+            { source: 'answerprod', value: 4511801, target: 'paperservice' },
+            { source: 'studygroupprod', value: 749, target: 'cron-job' },
+            { source: 'commentservice', value: 113721, target: 'usercenter' },
+            { source: 'weekendprod', value: 580, target: 'warrantservice' },
+            { source: 'Arms', value: 2656, target: 'schooluserservice' },
+            { source: 'Arms', value: 866, target: 'contentproduct' },
+            { source: 'Arms', value: 3462, target: 'spm' },
+            {
+              source: 'teacherdataproservice',
+              value: 3912,
+              target: 'homeworkservice'
+            },
+            { source: 'answerservice', value: 3620, target: 'cron-job' },
+            { source: 'xinliprod', value: 7186, target: 'oms' },
+            { source: 'holidayprod', value: 486, target: 'paperservice' },
+            { source: 'parentprod', value: 1895, target: 'usercenter' },
+            { source: 'Arms', value: 857940, target: 'data-api-home' },
+            { source: 'activitycenter', value: 851314, target: 'task-service' },
+            { source: 'fmservice', value: 125659, target: 'task-center' },
+            {
+              source: 'strategymarket',
+              value: 1563335,
+              target: 'homeworkservice'
+            },
+            {
+              source: 'studyplanservice',
+              value: 953,
+              target: 'missionproservice'
+            },
+            { source: 'answerprod', value: 21839433, target: 'answerservice' },
+            { source: 'answerprod', value: 118, target: 'data-api-home' },
+            { source: 'authcenter', value: 91556, target: 'safecenter' },
+            {
+              source: 'holidayprod',
+              value: 297613,
+              target: 'netschoolservice'
+            },
+            { source: 'weekendprod', value: 520, target: 'video-server' },
+            { source: 'Arms', value: 27584, target: 'resourceservice' },
+            { source: 'Arms', value: 2671, target: 'downloadservice' },
+            { source: 'xinliprod', value: 2419, target: 'task-center' },
+            { source: 'xinliprod', value: 6440, target: 'xinliservice' },
+            { source: 'holidayprod', value: 361, target: 'data-api-home' },
+            { source: 'studyprod', value: 278152, target: 'oms' },
+            { source: 'studyprod', value: 291, target: 'personaldataservice' },
+            { source: 'net-school', value: 239, target: 'cron-job' },
+            {
+              source: 'studygroupprod',
+              value: 1379222,
+              target: 'resourceservice'
+            },
+            { source: 'schoolopcenter', value: 7, target: 'commondata' },
+            { source: 'materialprod', value: 134, target: 'spm' },
+            {
+              source: 'tip-third-party-integration',
+              value: 350,
+              target: 'report-custom-home'
+            },
+            {
+              source: 'report-custom-home',
+              value: 141,
+              target: 'schoolopcenter'
+            },
+            { source: 'evalteacherprod', value: 26, target: 'psychology' },
+            { source: 'etikuprod', value: 514, target: 'paperservice' },
+            { source: 'studyprod', value: 2520, target: 'bigdata-integration' },
+            {
+              source: 'weekendprod',
+              value: 19689,
+              target: 'weekendreportservice'
+            },
+            { source: 'weekendprod', value: 5224, target: 'courseservice' },
+            { source: 'studyprod', value: 5265, target: 'data-api-home' },
+            { source: 'studyprod', value: 13211, target: 'strategymarket' },
+            { source: 'studynoteprod', value: 137, target: 'commondata' },
+            { source: 'evalteacherprod', value: 4, target: 'oms' },
+            { source: 'studygroupprod', value: 182335, target: 'goldshop' },
+            { source: 'rewardcenter', value: 1028767, target: 'creditcenter' },
+            { source: 'Arms', value: 360, target: 'interactive-video' },
+            { source: 'etikuprod', value: 83, target: 'warrantservice' },
+            { source: 'Arms', value: 360, target: 'userdataservice' },
+            { source: 'psychology', value: 14, target: 'schooluserservice' },
+            { source: 'Arms', value: 189024, target: 'report-custom-home' },
+            { source: 'commentservice', value: 106, target: 'courseservice' },
+            { source: 'weekendprod', value: 6, target: 'authcenter' },
+            { source: 'c-unified-manage', value: 6, target: 'authcenter' },
+            { source: 'etikuprod', value: 213, target: 'commondata' },
+            {
+              source: 'evalteacherprod',
+              value: 61,
+              target: 'teacherdatacenterservice'
+            },
+            { source: 'Arms', value: 279706, target: 'goldshop' },
+            { source: 'Arms', value: 2953, target: 'ordercenter' },
+            { source: 'Arms', value: 1081, target: 'personaservice' },
+            { source: 'Arms', value: 4089970, target: 'missionproservice4' },
+            { source: 'psychology', value: 1211, target: 'warrantservice' },
+            { source: 'studynoteprod', value: 79865, target: 'task-center' },
+            { source: 'report-custom-home', value: 690, target: 'commondata' },
+            { source: 'a-search', value: 23, target: 'data-api-home' },
+            { source: 'Arms', value: 393, target: 'bbs-api' },
+            {
+              source: 'volunteermanage',
+              value: 1,
+              target: 'careerlibraryservice'
+            },
+            { source: 'parentprod', value: 146, target: 'captcha' },
+            { source: 'activitycenter', value: 627688, target: 'rewardcenter' },
+            { source: 'xinliprod', value: 26, target: 'video-server' },
+            { source: 'authcenter', value: 3598, target: 'cron-job' },
+            { source: 'answerservice', value: 536016, target: 'studyprod' },
+            { source: 'answerprod', value: 1280586, target: 'wrongquestion' },
+            { source: 'homeworkprod', value: 10481920, target: 'commondata' },
+            { source: 'Arms', value: 720, target: 'datasampleservice' },
+            { source: 'resourceplatform', value: 4, target: 'commondata' },
+            { source: 'studyprod', value: 550, target: 'authcenter' },
+            { source: 'Arms', value: 1417, target: 'crmbasic' },
+            { source: 'goldshop', value: 509, target: 'cron-job' },
+            { source: 'activitycenter', value: 737945, target: 'usercenter' },
+            { source: 'spmjob', value: 355, target: 'cron-job' },
+            { source: 'Arms', value: 13173, target: 'oms' },
+            { source: 'Arms', value: 46477, target: 'studyplanservice' },
+            { source: 'volunteermanage', value: 6, target: 'filecenter' },
+            { source: 'parentprod', value: 112, target: 'wxproxy' },
+            { source: 'answerprod', value: 494344, target: 'qbank' },
+            { source: 'Arms', value: 34987, target: 'warrantservice' },
+            {
+              source: 'traffic-management',
+              value: 2,
+              target: 'tip-pipeline-service'
+            },
+            {
+              source: 'weekendreportservice',
+              value: 2,
+              target: 'data-api-home'
+            },
+            { source: 'Arms', value: 720, target: 'tip-integration' },
+            { source: 'Arms', value: 1174759, target: 'studygroupprod' },
+            { source: 'Arms', value: 591, target: 'volunteermanage' },
+            { source: 'xinliprod', value: 114973, target: 'video-player-prod' },
+            { source: 'studynoteprod', value: 877, target: 'data-api-home' },
+            { source: 'Arms', value: 2993, target: 'volunteerservice' },
+            { source: 'studyprod', value: 667, target: 'task-service' },
+            { source: 'file-gateway', value: 24, target: 'gateway-manage' },
+            { source: 'studynoteprod', value: 28, target: 'oms' },
+            { source: 'schoolopcenter', value: 2, target: 'homeworkservice' },
+            {
+              source: 'tip-third-party-integration',
+              value: 3131,
+              target: 'filecenter'
+            },
+            { source: 'Arms', value: 1232, target: 'fmservice' },
+            { source: 'studynoteprod', value: 4, target: 'filecenter' },
+            { source: 'netschoolservice', value: 558, target: 'cron-job' },
+            { source: 'Arms', value: 2880, target: 'gateway-manage' },
+            { source: 'answerprod', value: 1957834, target: 'warrantservice' },
+            { source: 'Arms', value: 360, target: 'video-server' },
+            { source: 'studygroupprod', value: 2088022, target: 'usercenter' },
+            { source: 'Arms', value: 360, target: 'wxproxy' },
+            { source: 'evalteacherprod', value: 52, target: 'authcenter' },
+            { source: 'Arms', value: 7418, target: 'homeworkservice' },
+            { source: 'Arms', value: 360, target: 'tip-pipeline-service' },
+            { source: 'studyprod', value: 943, target: 'weekendprod' },
+            { source: 'file-gateway', value: 16422, target: 'captcha' },
+            { source: 'answerprod', value: 483867, target: 'answeraiservice' },
+            { source: 'wordconvertservice', value: 239, target: 'cron-job' },
+            { source: 'holidayprod', value: 700, target: 'homeworkprod' },
+            {
+              source: 'teacherdatacenterservice',
+              value: 51792,
+              target: 'homeworkservice'
+            },
+            {
+              source: 'teacherdataproservice',
+              value: 121818,
+              target: 'resourceservice'
+            },
+            { source: 'goodservice', value: 711, target: 'safecenter' },
+            {
+              source: 'studygroupprod',
+              value: 109515,
+              target: 'bigdata-integration'
+            },
+            { source: 'Arms', value: 360, target: 'entranceexamprod' },
+            { source: 'fmservice', value: 497, target: 'cron-job' },
+            { source: 'weekendprod', value: 373, target: 'evaluateservice' },
+            { source: 'c-unified-manage', value: 49, target: 'courseservice' },
+            { source: 'answerservice', value: 6570039, target: 'paperservice' },
+            { source: 'answerservice', value: 536017, target: 'task-center' },
+            {
+              source: 'studynoteprod',
+              value: 14974,
+              target: 'bigdata-integration'
+            },
+            { source: 'Arms', value: 720, target: 'asset-service' },
+            { source: 'c-unified-manage', value: 253, target: 'cron-job' },
+            {
+              source: 'studynoteprod',
+              value: 1171508,
+              target: 'schooluserservice'
+            },
+            { source: 'Arms', value: 2518597, target: 'community-api' },
+            { source: 'resourceservice', value: 54990, target: 'qbank' },
+            {
+              source: 'tip-third-party-integration',
+              value: 44,
+              target: 'data-api-home'
+            },
+            { source: 'xinliprod', value: 586, target: 'bigdata-integration' },
+            { source: 'Arms', value: 374, target: 'xinliservice' },
+            {
+              source: 'studyplanservice',
+              value: 22721,
+              target: 'teacherdataproservice'
+            },
+            { source: 'entranceexamprod', value: 20, target: 'authcenter' },
+            { source: 'Arms', value: 5838, target: 'cron-job' },
+            { source: 'Arms', value: 360, target: 'liveprod' },
+            { source: 'careerprod', value: 9992, target: 'a-search' },
+            { source: 'studyprod', value: 84340, target: 'personaservice' },
+            { source: 'studyprod', value: 1, target: 'sensitiveword-client' },
+            {
+              source: 'studygroupprod',
+              value: 1361686,
+              target: 'rewardcenter'
+            },
+            { source: 'activitycenter', value: 3351, target: 'common-center' },
+            { source: 'Arms', value: 1764, target: 'bill-center' },
+            { source: 'canalservice', value: 7444, target: 'commondata' },
+            { source: 'Arms', value: 16269, target: 'smscenter' },
+            { source: 'weekendreportservice', value: 1, target: 'oms' },
+            { source: 'studyprod', value: 37041, target: 'commondata' },
+            {
+              source: 'activitycenter',
+              value: 256493,
+              target: 'homeworkservice'
+            },
+            { source: 'safecenter', value: 5631, target: 'captcha' },
+            {
+              source: 'schoolopcenter',
+              value: 448,
+              target: 'schooluserservice'
+            },
+            { source: 'Arms', value: 480, target: 'volunteerguideprod' },
+            { source: 'Arms', value: 1242, target: 'paycenter' },
+            {
+              source: 'activity-service',
+              value: 158452,
+              target: 'asset-service'
+            },
+            { source: 'careerprod', value: 116897, target: 'warrantservice' },
+            { source: 'Arms', value: 6250, target: 'answerservice' },
+            { source: 'Arms', value: 1018, target: 'evalteacherprod' },
+            { source: 'answerservice', value: 536015, target: 'weekendprod' },
+            { source: 'careerprod', value: 2727, target: 'commentservice' },
+            { source: 'video-manage', value: 305, target: 'cron-job' },
+            { source: 'parentprod', value: 211, target: 'authcenter' },
+            { source: 'ssoprod', value: 2, target: 'smscenter' },
+            {
+              source: 'answerservice',
+              value: 3535869,
+              target: 'weekendreportservice'
+            },
+            { source: 'schoolopcenter', value: 1, target: 'crmbasic' },
+            { source: 'activitycenter', value: 733, target: 'psychology' },
+            { source: 'Arms', value: 2185, target: 'schoolopcenter' },
+            { source: 'careerprod', value: 6795, target: 'courseservice' },
+            { source: 'Arms', value: 1360, target: 'contentauthcenter' },
+            { source: 'studyprod', value: 5801965, target: 'courseservice' },
+            {
+              source: 'holidayprod',
+              value: 1088547,
+              target: 'resourceservice'
+            },
+            { source: 'Arms', value: 723, target: 'recom-api-home' },
+            { source: 'weekendreportservice', value: 27, target: 'usercenter' },
+            { source: 'careerprod', value: 1082, target: 'psychology' },
+            { source: 'careerprod', value: 1481, target: 'oms' },
+            { source: 'Arms', value: 4111066, target: 'missionproservice2' },
+            { source: 'Arms', value: 2024620, target: 'commondata' },
+            { source: 'answerprod', value: 1349, target: 'missionproservice' },
+            { source: 'weekendprod', value: 278, target: 'data-api-home' },
+            { source: 'Arms', value: 5780, target: 'devops-schedule' },
+            { source: 'activitycenter', value: 1276643, target: 'goldshop' },
+            { source: 'studynoteprod', value: 53, target: 'message-platform' },
+            { source: 'studyprod', value: 12665, target: 'qbank' },
+            { source: 'Arms', value: 453563, target: 'careerprod' },
+            { source: 'answerprod', value: 29930, target: 'common-center' },
+            { source: 'parentprod', value: 1523, target: 'schooluserservice' },
+            { source: 'studyprod', value: 11013, target: 'a-search' },
+            {
+              source: 'report-custom-home',
+              value: 6477,
+              target: 'bigdata-integration'
+            },
+            {
+              source: 'activity-service',
+              value: 1752491,
+              target: 'usercenter'
+            },
+            { source: 'video-manage', value: 34, target: 'ssoprod' },
+            { source: 'Arms', value: 596, target: 'video-manage' },
+            { source: 'Arms', value: 1421, target: 'undergraduateprod' },
+            {
+              source: 'careerprod',
+              value: 173222,
+              target: 'careerlibraryservice'
+            },
+            {
+              source: 'studygroupprod',
+              value: 1775461,
+              target: 'homeworkservice'
+            },
+            { source: 'goodservice', value: 2, target: 'common-center' },
+            { source: 'tip-project', value: 6, target: 'tip-approval-center' },
+            { source: 'strategymarket', value: 932690, target: 'usercenter' },
+            { source: 'xinliprod', value: 172452, target: 'commentservice' },
+            { source: 'Arms', value: 4371, target: 'courseservice' },
+            { source: 'bihome', value: 9, target: 'ssoprod' },
+            { source: 'Arms', value: 6752, target: 'bigdata-integration' },
+            { source: 'community-api', value: 479, target: 'cron-job' },
+            { source: 'Arms', value: 6469, target: 'strategymarket' },
+            { source: 'Arms', value: 417, target: 'traffic-management' },
+            {
+              source: 'studyplanservice',
+              value: 1395,
+              target: 'homeworkservice'
+            },
+            { source: 'volunteermanage', value: 2, target: 'volunteerservice' },
+            { source: 'volunteermanage', value: 336, target: 'data-api-home' },
+            {
+              source: 'activitycenter',
+              value: 2042634,
+              target: 'activity-service'
+            },
+            { source: 'goldshop', value: 5, target: 'commondata' },
+            { source: 'Arms', value: 720, target: 'bigdata-download' },
+            {
+              source: 'video-player-prod',
+              value: 10876,
+              target: 'video-server'
+            },
+            { source: 'goodservice', value: 250, target: 'eteacherproduct' },
+            {
+              source: 'canalservice',
+              value: 10578,
+              target: 'schooluserservice'
+            },
+            { source: 'goldshop', value: 278948, target: 'authcenter' },
+            {
+              source: 'tip-project',
+              value: 49,
+              target: 'tip-third-party-integration'
+            },
+            {
+              source: 'report-custom-home',
+              value: 4655,
+              target: 'holidayprod'
+            },
+            { source: 'weekendprod', value: 575170, target: 'usercenter' },
+            {
+              source: 'answerservice',
+              value: 210395,
+              target: 'interactive-video'
+            },
+            {
+              source: 'netschoolservice',
+              value: 8,
+              target: 'sensitiveword-client'
+            },
+            {
+              source: 'weekendprod',
+              value: 8758,
+              target: 'bigdata-integration'
+            },
+            { source: 'psychology', value: 33, target: 'fmservice' },
+            { source: 'work-order', value: 18, target: 'role-access' },
+            { source: 'evalteacherprod', value: 588, target: 'cron-job' },
+            { source: 'holidayprod', value: 1042374, target: 'commondata' },
+            { source: 'Arms', value: 1106, target: 'tip-project' },
+            {
+              source: 'tip-third-party-integration',
+              value: 2037,
+              target: 'schoolopcenter'
+            },
+            { source: 'careerprod', value: 93, target: 'personaservice' },
+            { source: 'Arms', value: 9015835, target: 'filecenter' },
+            { source: 'Arms', value: 2118550, target: 'apppublishprod' },
+            { source: 'net-school', value: 1, target: 'commondata' },
+            { source: 'homeworkservice', value: 2553, target: 'paperservice' },
+            { source: 'studyprod', value: 4667, target: 'message-platform' },
+            { source: 'Arms', value: 360, target: 'wordconvertservice' },
+            {
+              source: 'resourceservice',
+              value: 12202953,
+              target: 'courseservice'
+            },
+            { source: 'studynoteprod', value: 585, target: 'cron-job' },
+            { source: 'volunteerservice', value: 103, target: 'commondata' },
+            { source: 'devops-schedule', value: 2, target: 'tip-integration' },
+            { source: 'weekendprod', value: 8, target: 'sensitiveword-client' },
+            { source: 'schoolopcenter', value: 515, target: 'authcenter' },
+            { source: 'report-custom-home', value: 233, target: 'filecenter' },
+            { source: 'Arms', value: 920, target: 'answeraiservice' },
+            { source: 'Arms', value: 861, target: 'bihome' },
+            {
+              source: 'video-player-prod',
+              value: 210241,
+              target: 'answerservice'
+            },
+            {
+              source: 'report-custom-home',
+              value: 4653,
+              target: 'schooluserservice'
+            },
+            {
+              source: 'activitycenter',
+              value: 392696,
+              target: 'strategymarket'
+            },
+            { source: 'contentproduct', value: 3, target: 'ssoprod' },
+            { source: 'video-player-prod', value: 1063896, target: 'oms' },
+            { source: 'weekendprod', value: 712, target: 'paperservice' },
+            { source: 'Arms', value: 36209, target: 'ssoprod' },
+            { source: 'contentproduct', value: 1746, target: 'qbank' },
+            { source: 'goodservice', value: 542, target: 'ordercenter' },
+            { source: 'Arms', value: 1048, target: 'etikuprod' },
+            {
+              source: 'volunteerservice',
+              value: 32589,
+              target: 'careerlibraryservice'
+            },
+            { source: 'holidayprod', value: 966, target: 'courseservice' },
+            { source: 'goodservice', value: 27, target: 'schooluserservice' },
+            { source: 'studyprod', value: 577552, target: 'evaluateservice' },
+            { source: 'materialprod', value: 555, target: 'ssoprod' },
+            { source: 'studygroupprod', value: 40372, target: 'commondata' },
+            { source: 'xinliprod', value: 116132, target: 'warrantservice' },
+            { source: 'oms', value: 3174, target: 'qbank' },
+            { source: 'schoolopcenter', value: 3088, target: 'ssoprod' },
+            { source: 'volunteerservice', value: 3219, target: 'a-search' },
+            {
+              source: 'missionproservice4',
+              value: 3907116,
+              target: 'missionproservice'
+            },
+            { source: 'weekendprod', value: 2079, target: 'oms' },
+            {
+              source: 'weekendprod',
+              value: 13955,
+              target: 'inschoollearningservice'
+            },
+            { source: 'downloadservice', value: 10, target: 'qbank' },
+            { source: 'video-player-prod', value: 2873, target: 'net-school' },
+            { source: 'xinliprod', value: 11901, target: 'usercenter' },
+            {
+              source: 'psychology',
+              value: 799,
+              target: 'careerlibraryservice'
+            },
+            {
+              source: 'activitycenter',
+              value: 322445,
+              target: 'eteacherproduct'
+            },
+            { source: 'studyprod', value: 1383, target: 'activitycenter' },
+            { source: 'Arms', value: 12055, target: 'safecenter' },
+            { source: 'studygroupprod', value: 1123087, target: 'task-center' },
+            { source: 'spm', value: 11526, target: 'crmbasic' },
+            {
+              source: 'strategymarket',
+              value: 91917,
+              target: 'warrantservice'
+            },
+            { source: 'activitycenter', value: 2490, target: 'cron-job' },
+            { source: 'Arms', value: 4072062, target: 'missionproservice3' },
+            { source: 'filecenter', value: 2208, target: 'authcenter' },
+            { source: 'answerservice', value: 3205308, target: 'qbank' },
+            {
+              source: 'missionproservice2',
+              value: 3923478,
+              target: 'missionproservice'
+            },
+            { source: 'studyprod', value: 38949, target: 'homeworkservice' },
+            { source: 'xinliprod', value: 3255, target: 'strategymarket' },
+            { source: 'activitycenter', value: 35400, target: 'oms' },
+            { source: 'evalteacherprod', value: 31, target: 'usercenter' },
+            { source: 'Arms', value: 1080, target: 'a-search' },
+            { source: 'video-player-prod', value: 63921, target: 'fmservice' },
+            { source: 'contentproduct', value: 16, target: 'paperservice' },
+            { source: 'oms', value: 28, target: 'homeworkservice' },
+            { source: 'Arms', value: 67120, target: 'psychology' },
+            { source: 'downloadservice', value: 2207, target: 'paperservice' },
+            { source: 'weekendprod', value: 420, target: 'cron-job' },
+            { source: 'studyprod', value: 2097524, target: 'usercenter' },
+            {
+              source: 'activitycenter',
+              value: 339377,
+              target: 'personaservice'
+            },
+            {
+              source: 'personaservice',
+              value: 2930043,
+              target: 'bigdatalabel'
+            },
+            { source: 'answerprod', value: 726485, target: 'strategymarket' },
+            { source: 'common-center', value: 1855, target: 'commondata' },
+            { source: 'Arms', value: 521718, target: 'personaldataservice' },
+            { source: 'homeworkprod', value: 595, target: 'eteacherproduct' },
+            { source: 'video-manage', value: 28, target: 'video-server' },
+            { source: 'Arms', value: 720, target: 'java-demo-project-a' },
+            { source: 'holidayprod', value: 7, target: 'resourceplatform' },
+            { source: 'doccloudmanageservice', value: 240, target: 'cron-job' },
+            {
+              source: 'missionproservice3',
+              value: 3901562,
+              target: 'missionproservice'
+            },
+            {
+              source: 'volunteerguideprod',
+              value: 9,
+              target: 'volunteerservice'
+            },
+            { source: 'volunteermanage', value: 10, target: 'ssoprod' },
+            { source: 'studyprod', value: 645228, target: 'warrantservice' },
+            { source: 'Arms', value: 11857604, target: 'video-player-prod' },
+            {
+              source: 'video-player-prod',
+              value: 2250816,
+              target: 'evaluateservice'
+            },
+            { source: 'Arms', value: 86395610, target: 'authcenter' },
+            { source: 'holidayprod', value: 787, target: 'cron-job' },
+            {
+              source: 'strategymarket',
+              value: 931423,
+              target: 'schooluserservice'
+            },
+            { source: 'Arms', value: 721, target: 'mobileapm' },
+            { source: 'Arms', value: 1441, target: 'task-service' },
+            { source: 'Arms', value: 7839613, target: 'studyprod' },
+            { source: 'Arms', value: 360, target: 'inschoollearningservice' },
+            { source: 'Arms', value: 360, target: 'dataclean' },
+            {
+              source: 'resourceservice',
+              value: 11940,
+              target: 'netschoolservice'
+            },
+            { source: 'eteacherproduct', value: 2, target: 'message-platform' },
+            { source: 'Arms', value: 10731, target: 'teacheradminprod' },
+            { source: 'xinliprod', value: 43, target: 'ssoprod' },
+            { source: 'Arms', value: 4081933, target: 'missionproservice' },
+            { source: 'etikuprod', value: 319, target: 'schooluserservice' },
+            { source: 'ssoprod', value: 240, target: 'cron-job' },
+            { source: 'holidayprod', value: 5002, target: 'oms' },
+            {
+              source: 'answerservice',
+              value: 3437908,
+              target: 'missionproservice'
+            },
+            { source: 'Arms', value: 360, target: 'teacherdatacenterservice' },
+            {
+              source: 'strategymarket',
+              value: 1116228,
+              target: 'missionproservice'
+            },
+            { source: 'common-center', value: 67032, target: 'authcenter' },
+            { source: 'Arms', value: 1990, target: 'admin-gateway' },
+            { source: 'weekendprod', value: 2, target: 'community-api' },
+            { source: 'evalteacherprod', value: 51, target: 'homeworkservice' },
+            { source: 'studyprod', value: 2399, target: 'cron-job' },
+            { source: 'psychology', value: 677, target: 'usercenter' },
+            {
+              source: 'missionproservice',
+              value: 3622,
+              target: 'homeworkservice'
+            },
+            { source: 'schoolopcenter', value: 512, target: 'usercenter' },
+            { source: 'Arms', value: 824025, target: 'holidayprod' },
+            { source: 'qbank', value: 15, target: 'papersearchservice' },
+            {
+              source: 'teacherdataproservice',
+              value: 2322,
+              target: 'netschoolservice'
+            },
+            { source: 'goldshop', value: 435, target: 'schooluserservice' },
+            { source: 'studyplanservice', value: 240, target: 'cron-job' },
+            { source: 'Arms', value: 540, target: 'sensitiveword-client' },
+            { source: 'Arms', value: 360, target: 'doccloudmanageservice' },
+            { source: 'xinliprod', value: 490318, target: 'fmservice' },
+            {
+              source: 'evalteacherprod',
+              value: 28,
+              target: 'netschoolservice'
+            },
+            { source: 'commentservice', value: 65103, target: 'common-center' },
+            { source: 'activitycenter', value: 15644, target: 'data-api-home' },
+            { source: 'studyprod', value: 44928, target: 'commentservice' },
+            { source: 'Arms', value: 371, target: 'role-access' },
+            {
+              source: 'holidayprod',
+              value: 657568,
+              target: 'schooluserservice'
+            },
+            { source: 'spmjob', value: 3406, target: 'goodservice' },
+            { source: 'Arms', value: 500, target: 'captcha' },
+            { source: 'careerprod', value: 4474, target: 'task-center' },
+            { source: 'Arms', value: 280688, target: 'creditcenter' },
+            { source: 'Arms', value: 720, target: 'aliyun-bi-integration' },
+            { source: 'Arms', value: 362, target: 'tip-approval-center' },
+            { source: 'oms', value: 838, target: 'courseservice' },
+            {
+              source: 'weekendreportservice',
+              value: 229,
+              target: 'paperservice'
+            },
+            { source: 'Arms', value: 735, target: 'examinationprod' },
+            { source: 'studynoteprod', value: 583387, target: 'usercenter' },
+            { source: 'holidayprod', value: 54, target: 'qbank' },
+            { source: 'Arms', value: 476, target: 'spmjob' },
+            {
+              source: 'evaluateservice',
+              value: 1134724,
+              target: 'courseservice'
+            },
+            { source: 'fmservice', value: 169, target: 'message-center' },
+            { source: 'studyprod', value: 229883, target: 'resourceplatform' },
+            { source: 'message-platform', value: 482, target: 'cron-job' },
+            { source: 'Arms', value: 18880486, target: 'answerprod' },
+            { source: 'spm', value: 241, target: 'cron-job' },
+            { source: 'strategymarket', value: 138958, target: 'task-center' },
+            { source: 'tip-project', value: 395, target: 'ssoprod' },
+            { source: 'parentprod', value: 274, target: 'smscenter' },
+            { source: 'Arms', value: 3263, target: 'net-school' },
+            { source: 'holidayprod', value: 30093, target: 'homeworkservice' },
+            { source: 'commentservice', value: 177, target: 'ssoprod' },
+            {
+              source: 'missionproservice',
+              value: 1275815,
+              target: 'studygroupprod'
+            },
+            {
+              source: 'eteacherproduct',
+              value: 1705,
+              target: 'schoolopcenter'
+            },
+            { source: 'xinliprod', value: 19, target: 'task-service' },
+            { source: 'c-unified-manage', value: 2, target: 'ssoprod' },
+            { source: 'studyprod', value: 44, target: 'fmservice' },
+            { source: 'parentprod', value: 53, target: 'studyprod' },
+            { source: 'Arms', value: 30387594, target: 'homeworkprod' },
+            { source: 'ssoprod', value: 1, target: 'captcha' },
+            {
+              source: 'eteacherproduct',
+              value: 16455,
+              target: 'resourceservice'
+            },
+            { source: 'Arms', value: 365, target: 'careerlibraryservice' },
+            { source: 'holidayprod', value: 15, target: 'authcenter' },
+            { source: 'task-service', value: 1588350, target: 'data-api-home' },
+            { source: 'goodservice', value: 72, target: 'paycenter' },
+            {
+              source: 'downloadservice',
+              value: 851,
+              target: 'homeworkservice'
+            },
+            { source: 'careerprod', value: 424, target: 'data-api-home' },
+            { source: 'personaservice', value: 720, target: 'cron-job' },
+            { source: 'xinliprod', value: 240, target: 'cron-job' },
+            { source: 'qbank', value: 365, target: 'usercenter' },
+            {
+              source: 'video-player-prod',
+              value: 477968,
+              target: 'interactive-video'
+            },
+            { source: 'resourceservice', value: 815932, target: 'fmservice' },
+            { source: 'eteacherproduct', value: 342884, target: 'authcenter' },
+            { source: 'resourceplatform', value: 206, target: 'paperservice' },
+            { source: 'commentservice', value: 141, target: 'task-center' },
+            { source: 'Arms', value: 82921, target: 'weekendprod' },
+            {
+              source: 'Arms',
+              value: 1349,
+              target: 'teachergeneralabilityservice'
+            },
+            { source: 'Arms', value: 360, target: 'staging-bihome' },
+            { source: 'community-api', value: 89, target: 'ewtprod' },
+            { source: 'holidayprod', value: 2700, target: 'message-platform' },
+            {
+              source: 'studynoteprod',
+              value: 147683,
+              target: 'homeworkservice'
+            },
+            { source: 'activitycenter', value: 5568, target: 'commondata' },
+            { source: 'downloadservice', value: 1801, target: 'filecenter' },
+            { source: 'parentprod', value: 44, target: 'commondata' },
+            { source: 'oms', value: 69505, target: 'personaservice' },
+            {
+              source: 'tip-third-party-integration',
+              value: 225,
+              target: 'bigdata-integration'
+            },
+            { source: 'answeraiservice', value: 7178, target: 'paperservice' },
+            { source: 'Arms', value: 74426, target: 'commentservice' },
+            {
+              source: 'video-player-prod',
+              value: 1061911,
+              target: 'courseservice'
+            },
+            {
+              source: 'studyplanservice',
+              value: 2917,
+              target: 'resourceservice'
+            },
+            { source: 'eteacherproduct', value: 4221, target: 'oms' },
+            { source: 'fmservice', value: 3128, target: 'bigdata-integration' },
+            { source: 'Arms', value: 8091, target: 'wrongquestion' },
+            { source: 'Arms', value: 3688, target: 'qbank' },
+            { source: 'paycenter', value: 2, target: 'bill-center' },
+            {
+              source: 'studygroupprod',
+              value: 140730,
+              target: 'data-api-home'
+            },
+            { source: 'activitycenter', value: 1195927, target: 'task-center' },
+            { source: 'community-api', value: 7, target: 'courseservice' },
+            { source: 'volunteerguideprod', value: 2, target: 'careerprod' },
+            { source: 'report-custom-home', value: 4654, target: 'usercenter' },
+            {
+              source: 'studygroupprod',
+              value: 22876,
+              target: 'message-platform'
+            },
+            { source: 'tip-project', value: 1, target: 'traffic-management' },
+            { source: 'asset-service', value: 23271, target: 'task-center' },
+            { source: 'careerprod', value: 323944, target: 'volunteerservice' },
+            { source: 'authcenter', value: 4419, target: 'commondata' },
+            { source: 'oms', value: 28, target: 'fmservice' },
+            { source: 'goodservice', value: 187, target: 'smscenter' },
+            { source: 'contentproduct', value: 7, target: 'filecenter' },
+            { source: 'Arms', value: 2028, target: 'materialprod' },
+            { source: 'goodservice', value: 2574, target: 'authcenter' },
+            { source: 'studynoteprod', value: 169, target: 'warrantservice' },
+            { source: 'answerprod', value: 222107, target: 'homeworkprod' },
+            { source: 'contentauthcenter', value: 9, target: 'safecenter' },
+            {
+              source: 'answerservice',
+              value: 536014,
+              target: 'undergraduateprod'
+            },
+            { source: 'volunteermanage', value: 296, target: 'cron-job' },
+            { source: 'Arms', value: 1440, target: 'evaluateservice' },
+            { source: 'Arms', value: 10917, target: 'common-center' },
+            {
+              source: 'task-service',
+              value: 342727,
+              target: 'bigdata-integration'
+            },
+            { source: 'contentproduct', value: 252, target: 'cron-job' },
+            { source: 'Arms', value: 3130, target: 'teacherdataproservice' },
+            { source: 'Arms', value: 4128963, target: 'eteacherproduct' },
+            { source: 'Arms', value: 3223736, target: 'usercenter' },
+            { source: 'answerprod', value: 1713410, target: 'courseservice' },
+            { source: 'tip-project', value: 64, target: 'devops-platform' },
+            { source: 'psychology', value: 228, target: 'task-center' },
+            { source: 'canalservice', value: 5, target: 'volunteerservice' },
+            { source: 'Arms', value: 360, target: 'videocheckprod' },
+            { source: 'studyprod', value: 304, target: 'wrongquestion' },
+            { source: 'Arms', value: 360, target: 'demandprod' },
+            { source: 'Arms', value: 11058, target: 'paperservice' },
+            { source: 'questionproduceprod', value: 18, target: 'filecenter' },
+            { source: 'Arms', value: 8838, target: 'goodservice' },
+            { source: 'Arms', value: 4669970, target: 'activitycenter' },
+            {
+              source: 'holidayprod',
+              value: 12,
+              target: 'teachergeneralabilityservice'
+            },
+            { source: 'bill-center', value: 377, target: 'commondata' },
+            {
+              source: 'studygroupprod',
+              value: 1257681,
+              target: 'schooluserservice'
+            },
+            { source: 'Arms', value: 383, target: 'questionproduceprod' },
+            { source: 'Arms', value: 72402, target: 'multimedia-management' },
+            { source: 'careerprod', value: 500721, target: 'usercenter' },
+            { source: 'community-api', value: 377, target: 'common-center' },
+            {
+              source: 'message-center',
+              value: 223,
+              target: 'message-platform'
+            },
+            { source: 'volunteerguideprod', value: 10, target: 'authcenter' },
+            { source: 'questionproduceprod', value: 241, target: 'cron-job' },
+            { source: 'goodservice', value: 7727, target: 'usercenter' },
+            { source: 'oms', value: 1923, target: 'cron-job' },
+            {
+              source: 'weekendreportservice',
+              value: 4,
+              target: 'bigdata-integration'
+            },
+            { source: 'ewtprod', value: 1, target: 'homeworkservice' },
+            { source: 'ordercenter', value: 1376, target: 'paycenter' },
+            { source: 'xinliprod', value: 58, target: 'message-platform' },
+            { source: 'weekendreportservice', value: 317, target: 'qbank' },
+            { source: 'Arms', value: 679, target: 'netschoolservice' },
+            { source: 'ewtprod', value: 272361, target: 'activity-service' },
+            { source: 'Arms', value: 360, target: 'thematicservice' },
+            { source: 'Arms', value: 1092, target: 'rewardcenter' },
+            { source: 'net-school', value: 13, target: 'schooluserservice' },
+            { source: 'Arms', value: 1169855, target: 'studynoteprod' },
+            { source: 'studyprod', value: 6, target: 'bigdatalabel' },
+            { source: 'Arms', value: 7864, target: 'parentprod' },
+            { source: 'work-order', value: 6, target: 'demandprod' },
+            { source: 'Arms', value: 1080, target: 'activity-service' },
+            { source: 'studynoteprod', value: 388, target: 'userdataservice' },
+            { source: 'ewtprod', value: 2, target: 'homeworkprod' },
+            { source: 'Arms', value: 1106140, target: 'canalservice' },
+            { source: 'strategymarket', value: 2277, target: 'cron-job' },
+            { source: 'studygroupprod', value: 742572, target: 'creditcenter' },
+            { source: 'Arms', value: 446, target: 'c-unified-manage' },
+            { source: 'parentprod', value: 299, target: 'oms' },
+            { source: 'devops-schedule', value: 5580, target: 'cron-job' },
+            { source: 'tip-project', value: 7, target: 'role-access' },
+            { source: 'Arms', value: 540, target: 'weekendreportservice' },
+            {
+              source: 'weekendreportservice',
+              value: 1,
+              target: 'schooluserservice'
+            },
+            { source: 'community-api', value: 12, target: 'message-platform' },
+            { source: 'Arms', value: 360, target: 'papersearchservice' },
+            { source: 'Arms', value: 37625, target: 'message-center' },
+            { source: 'qbank', value: 10, target: 'commondata' },
+            {
+              source: 'resourceservice',
+              value: 9198664,
+              target: 'paperservice'
+            },
+            { source: 'authcenter', value: 40, target: 'smscenter' },
+            {
+              source: 'studynoteprod',
+              value: 190,
+              target: 'teachergeneralabilityservice'
+            },
+            { source: 'resourceservice', value: 8968, target: 'net-school' },
+            {
+              source: 'strategymarket',
+              value: 1427566,
+              target: 'teacherdataproservice'
+            },
+            { source: 'ewtprod', value: 8162, target: 'task-service' },
+            {
+              source: 'tip-third-party-integration',
+              value: 2204,
+              target: 'ssoprod'
+            },
+            {
+              source: 'studynoteprod',
+              value: 932,
+              target: 'multimedia-management'
+            },
+            {
+              source: 'homeworkprod',
+              value: 18015258,
+              target: 'resourceservice'
+            },
+            { source: 'ewtprod', value: 10069, target: 'careerlibraryservice' },
+            { source: 'Arms', value: 3321, target: 'devops-platform' },
+            { source: 'holidayprod', value: 6, target: 'teacheradminprod' },
+            { source: 'evalteacherprod', value: 170, target: 'warrantservice' },
+            {
+              source: 'answerservice',
+              value: 2999839,
+              target: 'wrongquestion'
+            },
+            { source: 'studygroupprod', value: 59321, target: 'holidayprod' },
+            { source: 'c-unified-manage', value: 6, target: 'usercenter' },
+            {
+              source: 'studynoteprod',
+              value: 166,
+              target: 'sensitiveword-client'
+            },
+            {
+              source: 'weekendprod',
+              value: 778410,
+              target: 'schooluserservice'
+            },
+            {
+              source: 'tip-project',
+              value: 273,
+              target: 'tip-pipeline-service'
+            },
+            {
+              source: 'teacheradminprod',
+              value: 68,
+              target: 'sensitiveword-client'
+            },
+            { source: 'homeworkprod', value: 4088, target: 'cron-job' },
+            { source: 'homeworkprod', value: 482, target: 'message-platform' },
+            { source: 'teacheradminprod', value: 4003, target: 'usercenter' },
+            { source: 'answerprod', value: 743067, target: 'usercenter' },
+            { source: 'ewtprod', value: 12292, target: 'commentservice' },
+            { source: 'authcenter', value: 1580, target: 'captcha' },
+            { source: 'Arms', value: 1779, target: 'mstsearchservice' },
+            { source: 'paperservice', value: 1175, target: 'courseservice' },
+            { source: 'Arms', value: 4070868, target: 'ewtprod' },
+            { source: 'Arms', value: 391, target: 'resourceplatform' },
+            { source: 'apppublishprod', value: 241, target: 'cron-job' },
+            { source: 'qbank', value: 960, target: 'cron-job' },
+            { source: 'paperservice', value: 43, target: 'ssoprod' },
+            { source: 'Arms', value: 479, target: 'work-order' },
+            { source: 'strategymarket', value: 3552, target: 'data-api-home' },
+            { source: 'answerprod', value: 242, target: 'personaldataservice' },
+            { source: 'weekendprod', value: 10, target: 'commondata' },
+            { source: 'Arms', value: 556014, target: 'xinliprod' },
+            { source: 'file-gateway', value: 716383, target: 'filecenter' },
+            { source: 'resourceplatform', value: 3, target: 'ssoprod' },
+            { source: 'studyprod', value: 1023, target: 'task-center' },
+            {
+              source: 'teacheradminprod',
+              value: 999,
+              target: 'resourceservice'
+            },
+            {
+              source: 'wrongquestion',
+              value: 199868,
+              target: 'homeworkservice'
+            },
+            { source: 'goodservice', value: 1048, target: 'commondata' },
+            {
+              source: 'teacherdataproservice',
+              value: 2160,
+              target: 'cron-job'
+            },
+            { source: 'answerprod', value: 429658, target: 'homeworkservice' },
+            { source: 'Arms', value: 9494, target: 'task-center' },
+            {
+              source: 'commentservice',
+              value: 1466,
+              target: 'sensitiveword-client'
+            },
+            { source: 'studynoteprod', value: 79865, target: 'studygroupprod' },
+            { source: 'authcenter', value: 1820215, target: 'usercenter' },
+            {
+              source: 'homeworkprod',
+              value: 4,
+              target: 'doccloudmanageservice'
+            },
+            { source: 'answerprod', value: 17420, target: 'schoolopcenter' },
+            { source: 'goldshop', value: 278954, target: 'usercenter' },
+            { source: 'bill-center', value: 396, target: 'cron-job' },
+            { source: 'psychology', value: 242, target: 'cron-job' },
+            { source: 'xinliprod', value: 2550, target: 'commondata' },
+            { source: 'Arms', value: 373, target: 'push-monitor' },
+            { source: 'evalteacherprod', value: 28, target: 'resourceservice' },
+            { source: 'canalservice', value: 2562, target: 'usercenter' },
+            { source: 'studyprod', value: 187993, target: 'paperservice' },
+            { source: 'volunteerguideprod', value: 3, target: 'psychology' },
+            { source: 'common-center', value: 1, target: 'oms' },
+            { source: 'net-school', value: 11872, target: 'usercenter' },
+            {
+              source: 'Arms',
+              value: 7012,
+              target: 'tip-third-party-integration'
+            },
+            {
+              source: 'activitycenter',
+              value: 33452,
+              target: 'bigdata-integration'
+            },
+            {
+              source: 'tip-third-party-integration',
+              value: 297,
+              target: 'teachergeneralabilityservice'
+            },
+            { source: 'Arms', value: 720, target: 'evaluation' },
+            { source: 'holidayprod', value: 15, target: 'bigdata-integration' },
+            {
+              source: 'teachergeneralabilityservice',
+              value: 10,
+              target: 'filecenter'
+            }
+          ],
+         emphasis: {
+            focus: 'adjacency'
+          }, lineStyle: {
+            color: 'gradient',
+            curveness: 0.5
+          }
+        }
+      ]
+    })
+  );
+
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
